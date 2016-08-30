@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon2.ico"/>
+    <meta name="viewport" content="width=divice-width,initial-scale=1.2,user-scalable=no,maximum-scale=1">
+    <title>后台编辑</title>
+    <link href="javascripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="hightcss/railscasts.css">
+
+    <style>
+        .input-xlarge{
+            width: 99%;
+            height: 30px;
+            color:rgb(40,79,79);
+            font-weight: 500;
+        }
+        *{
+            outline:none;
+        }
+        input,textarea{
+            border: 1px solid #004EA2 !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" style="border-radius: 0;">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile.less display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">我的后台管理系统</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="li1"><a href="#myarticle/edit">新建文章</a></li>
+                    <li id="li2"><a href="#myshort/edit">新建笔记</a></li>
+                    <li id="li3"><a href="#mycollec/edit ">新建收藏</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+ </nav>
+
+
+<div class="container">
+    <div class="col-lg-6">
+        <form class="form-horizontal" id="edit_article">
+            <fieldset>
+                <div id="legend" class="">
+                    <legend class="">在线编辑我的文章</legend>
+                </div>
+                <div class="control-group">
+
+                    <!-- Prepended text-->
+                    <label class="control-label">输入密钥</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">^_^</span>
+                            <input class="span2" placeholder="输入密钥" id="input00" type="text">
+                        </div>
+                    </div>
+
+                </div><div class="control-group">
+
+                <!-- Text input-->
+                <label class="control-label" for="input01">输入题目</label>
+                <div class="controls">
+                    <input type="text" id="input01" name="" placeholder="输入题目" class="input-xlarge">
+                </div>
+            </div>
+
+                <div class="control-group">
+
+                    <!-- Text input-->
+                    <label class="control-label" for="input02">输入标签</label>
+                    <div class="controls">
+                        <input type="text" id="input02" placeholder="输入标签" class="input-xlarge">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Textarea -->
+                    <label class="control-label">输入主要内容</label>
+                    <div class="controls">
+                        <div class="textarea">
+                            <textarea id="input03" style="width: 99%;min-height: 500px;" class="marke1"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                        <button class="btn btn-success" id="submit_article">提交</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+        <form class="form-horizontal" id="edit_article2" style="display: none">
+        <fieldset>
+            <div id="legend2" class="">
+                <legend class="">在线编辑我的短篇</legend>
+            </div>
+            <div class="control-group">
+
+                <!-- Prepended text-->
+                <label class="control-label">输入密钥</label>
+                <div class="controls">
+                    <div class="input-prepend">
+                        <span class="add-on">^_^</span>
+                        <input class="span2" placeholder="输入密钥" id="input200" type="text">
+                    </div>
+                </div>
+
+            </div><div class="control-group">
+
+            <!-- Text input-->
+            <label class="control-label" for="input01">输入题目</label>
+            <div class="controls">
+                <input type="text" id="input201" name="" placeholder="输入题目" class="input-xlarge">
+            </div>
+        </div>
+
+            <div class="control-group">
+
+                <!-- Text input-->
+                <label class="control-label" for="input02">输入标签</label>
+                <div class="controls">
+                    <input type="text" id="input202" placeholder="输入标签" class="input-xlarge">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Textarea -->
+                <label class="control-label">输入主要内容</label>
+                <div class="controls">
+                    <div class="textarea">
+                        <textarea id="input203" style="width: 99%;min-height: 500px;" class="marke2"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <!-- Button -->
+                <div class="controls">
+                    <button class="btn btn-success" id="submit_article2">提交</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+        <form class="form-horizontal" id="edit_article3" style="display: none">
+            <fieldset>
+                <div id="legend3" class="">
+                    <legend class="">在线编辑我的收藏</legend>
+                </div>
+                <div class="control-group">
+
+                    <!-- Prepended text-->
+                    <label class="control-label">输入密钥</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">^_^</span>
+                            <input class="span2" placeholder="输入密钥" id="input300" type="text">
+                        </div>
+                    </div>
+
+                </div><div class="control-group">
+
+                <!-- Text input-->
+                <label class="control-label" for="input01">输入题目</label>
+                <div class="controls">
+                    <input type="text" id="input301" name="" placeholder="输入题目" class="input-xlarge">
+                </div>
+            </div>
+
+                <div class="control-group">
+
+                    <!-- Text input-->
+                    <label class="control-label" for="input02">输入标签</label>
+                    <div class="controls">
+                        <input type="text" id="input302" placeholder="输入标签" class="input-xlarge">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Textarea -->
+                    <label class="control-label">输入主要内容</label>
+                    <div class="controls">
+                        <div class="textarea">
+                            <textarea id="input303" style="width: 99%;min-height: 500px;" class="marke3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <!-- Button -->
+                    <div class="controls">
+                        <button class="btn btn-success" id="submit_article3">提交</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-lg-6">
+        <div style="width: 95%" id="toinsert"></div>
+    </div>
+</div>
+<br/><br/>
+<script src="http://cdn.bootcss.com/marked/0.3.6/marked.js"></script>
+<script src="javascripts/jquery/dist/jquery.min.js"></script>
+<script src="javascripts/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="javascripts/marke.js"></script>
+<script src="javascripts/highlight/highlight.pack.js"></script>
+<script src="javascripts/underscore/underscore-min.js"></script>
+<script src="javascripts/backbone/backbone-min.js"></script>
+
+<script>
+    $('.marke1').bind("keydown",function(){
+        $("#toinsert").html(marked($('#input03').val()));
+    });
+    $('.marke2').bind("keydown",function(){
+        $("#toinsert").html(marked($('#input203').val()));
+    })
+</script>
+<script src="javascripts/niexiaotao.js"></script>
+</body>
+</html>

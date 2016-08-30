@@ -1,0 +1,3 @@
+<li><%= article_number %></li>
+    <li class="info_data_border"><%= s_article_number %></li>
+<li><%= visitors %></li>

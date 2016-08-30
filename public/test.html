@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <style>
+        #a{
+            width:20px;
+            height:200px;
+            background-color:#aaa;
+            position:relative;
+        }
+        #b{
+            width:100%;
+            height:15%;
+            background-color:palevioletred;
+            position:absolute;
+            top:0px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div id="a">
+    <div id="b"></div>
+</div>
+
+<script src="javascripts/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#b").mousedown(function(e){
+            var y0=e.offsetY;
+            var top0=parseInt($(this).css("top"));
+            $(document).bind('mousemove',event,movey);
+            $(document).mouseup(function(){
+                $(document).unbind("mousemove");
+            })
+            //定义鼠标移动时执行的函数
+            function movey(){
+                var y1=event.offsetY;
+                var dis=y1-y0;
+                var bili=(dis+y0)/($("#a").height()-$("#b").height())
+                if(bili>=0&&bili<=1)
+                    $("#b").css("top",dis+top0);
+
+                else if (bili>1)
+                    $("#b").css("top",$("#a").height()-$("#b").height());
+
+                else
+                    $("#b").css("top","0px");
+            }
+        }).mouseup(function(){
+            $(document).unbind("mousemove"); //不能只给document绑定事件
+
+        })
+    })
+</script>
+</body>
+</html>

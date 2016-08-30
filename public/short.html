@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>速记轻博</title>
+    <link href="less/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="top_bar"></div>
+
+<div class="myblog_index">
+    <div class="myblog_index_1">
+        <div class="index_main">
+            <div class="short_title">
+                <h4>速记轻博客</h4>
+                <p>速记轻博客用来记录自己平时看到的一些琐碎的知识，集中起来，随机展现以供review，让碎片学习变得更有价值</p>
+            </div>
+            <div class="short_main">
+                <div class="short_main_class">
+                    <ul>
+                        <li class="classify"><span>随机顺序</span></li>
+                        <li class="classify"><span>时间顺序</span></li>
+                        <li class="classify"><span>选择类别</span></li>
+                    </ul>
+                    <form>
+                        <img src="images/search.png" id="begin_search">
+                        <input type="text" id="short_search" placeholder="quick search...">
+                    </form>
+                </div>
+                <div class="short_main_l">
+
+                    <!--<div class="short_this">-->
+                        <!--<div class="this_title">-->
+                            <!--<h4>1111111</h4>-->
+                            <!--<a>返回</a>-->
+                        <!--</div>-->
+                        <!--<div class="this_content">-->
+                            <!--<ul>-->
+                                <!--<a href="#"><li class="tag_search">mytag</li></a>-->
+                                <!--<a href="#"><li class="tag_search">mytag2</li></a>-->
+                            <!--</ul>-->
+                            <!--<div class="this_content_all">看了hexo wordpress觉得现有的模版都不让自己满意，而直接扩展太多功能我觉得也有点麻烦，另外也是自己先要锻炼一下，所以打算从0到1写一个博客，[给定时间一周，但是我知道一周是肯定做不好的]-->
+
+                                <!--功能：-->
+                                <!--首页集成：网站名称以及标语，分类栏(导航栏)、一些基本个人信息、RSS、多国语言(中文、英文)、多种主题(暂时颜色)，banner、文章(借鉴36kr，下拉刷新一篇文章)-->
+                                <!--详情页：博客基本信息(时间标签浏览量)，评论：引入多说-->
+                                <!--列表页：轻博客与长博客：排序功能(时间、热度、tag、随机)，筛选、搜索-->
+                                <!--书写：markdown写文章\.json文件配置-->
+
+                                <!--技术：-->
+                                <!--backbone＋express(nodejs)+其他扩展库+mysql(自己最好写好一个库，作为以后使用，这个库可以发布出来)-->
+                                <!--利用bower  加载其他库-->
+
+                                <!--尽量可扩展，大多数内容放在配置文件中-->
+                                <!--界面：-->
+                                <!--参考这个http://blackganglion.com/archives/</div>-->
+                            <!--<div class="this_content_time">2015.12.12 12:00:00</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+                <div id="paginator"></div>
+            </div>
+        </div>
+
+        <div class="index_info">
+            <div class="info_top">
+                <div class="info_header">
+                    <p class="info_header_s"><A href="index.html">10000H.top</A></p>
+                </div>
+                <div class="language"><span>中文</span></div>
+                <ul class="info_li">
+                </ul>
+                <div class="info_me">
+                    <p class="info_me_s">要想成为大牛,10000hours,也是远远不够的。</p>
+                </div>
+            </div>
+            <div class="info_second">
+                <div class="protrait">
+                    <img class="protrait_s" src="http://placeholder.cn/110">
+                </div>
+                <div class="name">XT.N</div>
+                <div class="all_data">
+                    <ul class="info_data">
+                    </ul>
+                    <ul class="info_data_tag">
+                        <li>文章</li>
+                        <li>轻博</li>
+                        <li>浏览</li>
+                    </ul>
+                </div>
+                <ul class="other_site">
+                    <li><img src="images/7.jpg"><span>net@zju.edu.cn</span></li>
+                    <li><a href="http://blog.csdn.net/ul646691993" target="_blank"><img src="images/6.jpg"><span>csdn blog</span></a></li>
+                    <li><a href="https://github.com/aircloud" target="_blank"><img src="images/6.jpg"><span>github</span></a></li>
+                </ul>
+                <div class="rss">
+                    <p>rss</p>
+                </div>
+                <div class="search">
+                    <form>
+                        <input id="index_search" class="index_search" type="text" name="search" placeholder="在这里搜索...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="footer">
+    <p>@2016 XT.N 版权所有,遵循<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" style="border-bottom: dashed 1px cornflowerblue">署名-相同方式共享4.0国际协议</a></p>
+</div>
+<script src="javascripts/highlight/highlight.pack.js"></script>
+<script src="javascripts/jquery/dist/jquery.min.js"></script>
+<script src="javascripts/underscore/underscore-min.js"></script>
+<script src="javascripts/backbone/backbone-min.js"></script>
+<script type="text/template" id="listTemplate">
+    <% _.each(datas, function (item) { %>
+    <li><a href="<%= item.href %>"><img src="<%= item.url %>"><span><%= item.title %></span></a></li>
+    <% }); %>
+</script>
+<script type="text/template" id="dataTemplate">
+    <li><%= article_number %></li>
+    <li class="info_data_border"><%= s_article_number %></li>
+    <li><%= visitors %></li>
+</script>
+<script type="text/template" id="shortView">
+    <div class="short_main_each">
+        <div class="each_title"><a href="#" class="toDetail" title="<%= ID %>"><%= title %></a></div>
+        <div class="each_content">
+            <ul>
+                <% _.each(tag, function (mytag) { %>
+                <a href="#"><li class="tag_search"><%= mytag %></li></a>
+                <% }); %>
+            </ul>
+            <div class="content_main"><%= describes %>
+            </div>
+            <div class="content_time"><%= time %></div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="shortThis">
+    <div class="short_this">
+        <div class="this_title">
+            <h4><%= title %></h4>
+            <a id="backToList">返回</a>
+        </div>
+        <div class="this_content">
+            <ul>
+                <% _.each(tag, function (mytag) { %>
+                <a href="#"><li class="tag_search"><%= mytag %></li></a>
+                <% }); %>
+            </ul>
+            <div class="this_content_all"><%= content %></div>
+            <div class="this_content_time"><%= time %></div>
+        </div>
+    </div>
+</script>
+<script src="javascripts/backbone.paginator.js"></script>
+<script src="javascripts/backgrid.js"></script>
+<script src="javascripts/extensions/paginator/backgrid-paginator.js"></script>
+<script src="javascripts/extensions/text-cell/backgrid-text-cell.js"></script>
+<script src="javascripts/index.js"></script>
+<script src="javascripts/short.js"></script>
+</body>
+</html>

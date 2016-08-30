@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="hightcss/railscasts.css">
+</head>
+<body>
+
+<p>1111</p><br/>123<br/>123<br/><pre><code><br/>var Body = Backgrid.Body = Backbone.View.extend({<br/><br/>  /<i>* @property */<br/>  tagName: "tbody",<br/><br/>  /**<br/>     Initializer.<br/><br/>     @param {Object} options<br/>     @param {Backbone.Collection} options.collection<br/>     @param {Backbone.Collection.options.columns<br/>     Column metadata.<br/>     @param {Backgrid.Row} [options.row=Backgrid.Row] The Row class to use.<br/>     @param {string|function(): string} [options.emptyText] The text to display in the empty row.<br/><br/>     @throws {TypeError} If options.columns or options.collection is undefined.<br/><br/>     See Backgrid.Row.<br/>  </i>/<br/>  initialize: function (options) {<br/><br/>    this.columns = options.columns;<br/>    if (!(this.columns instanceof Backbone.Collection)) {<br/>      this.columns = new Columns(this.columns);<br/>    }<br/><br/>    this.row = options.row || Row;<br/>    this.rows = this.collection.map(function (model) {<br/>      var row = new this.row({<br/>        columns: this.columns,<br/>        model: model<br/>      });<br/><br/>      return row;<br/>    }, this);<br/><br/>    this.emptyText = options.emptyText;<br/>    this._unshiftEmptyRowMayBe();<br/><br/>    var collection = this.collection;<br/>    this.listenTo(collection, "add", this.insertRow);<br/>    this.listenTo(collection, "remove", this.removeRow);<br/>    this.listenTo(collection, "sort", this.refresh);<br/>    this.listenTo(collection, "reset", this.refresh);<br/>    this.listenTo(collection, "backgrid:sort", this.sort);<br/>    this.listenTo(collection, "backgrid:edited", this.moveToNextCell);<br/>  },<br/><br/>  _unshiftEmptyRowMayBe: function () {<br/>    if (this.rows.length === 0 && this.emptyText != null) {<br/>      this.rows.unshift(new EmptyRow({<br/>        emptyText: this.emptyText,<br/>        columns: this.columns<br/>      }));<br/>    }<br/>  },<br/></code></pre><br/><br/>
+<!--<pre><code>-->
+
+    <!--var Body = Backgrid.Body = Backbone.View.extend({-->
+
+  <!--/** @property */-->
+  <!--tagName: "tbody",-->
+
+  <!--/**-->
+     <!--Initializer.-->
+
+     <!--@param {Object} options-->
+     <!--@param {Backbone.Collection} options.collection-->
+     <!--@param {Backbone.Collection.options.columns-->
+     <!--Column metadata.-->
+     <!--@param {Backgrid.Row} [options.row=Backgrid.Row] The Row class to use.-->
+     <!--@param {string|function(): string} [options.emptyText] The text to display in the empty row.-->
+
+     <!--@throws {TypeError} If options.columns or options.collection is undefined.-->
+
+     <!--See Backgrid.Row.-->
+  <!--*/-->
+  <!--initialize: function (options) {-->
+
+    <!--this.columns = options.columns;-->
+    <!--if (!(this.columns instanceof Backbone.Collection)) {-->
+      <!--this.columns = new Columns(this.columns);-->
+    <!--}-->
+
+    <!--this.row = options.row || Row;-->
+    <!--this.rows = this.collection.map(function (model) {-->
+      <!--var row = new this.row({-->
+        <!--columns: this.columns,-->
+        <!--model: model-->
+      <!--});<br/>-->
+
+      <!--return row;-->
+    <!--}, this);-->
+
+    <!--this.emptyText = options.emptyText;-->
+    <!--this._unshiftEmptyRowMayBe();-->
+
+    <!--var collection = this.collection;-->
+    <!--this.listenTo(collection, "add", this.insertRow);-->
+    <!--this.listenTo(collection, "remove", this.removeRow);-->
+    <!--this.listenTo(collection, "sort", this.refresh);-->
+    <!--this.listenTo(collection, "reset", this.refresh);-->
+    <!--this.listenTo(collection, "backgrid:sort", this.sort);-->
+    <!--this.listenTo(collection, "backgrid:edited", this.moveToNextCell);-->
+  <!--},-->
+
+  <!--_unshiftEmptyRowMayBe: function () {-->
+    <!--if (this.rows.length === 0 && this.emptyText != null) {-->
+      <!--this.rows.unshift(new EmptyRow({-->
+        <!--emptyText: this.emptyText,-->
+        <!--columns: this.columns-->
+      <!--}));-->
+    <!--}-->
+  <!--},-->
+<!--</code></pre>-->
+
+<script src="javascripts/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

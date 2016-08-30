@@ -1,0 +1,289 @@
+ <div class="active_article">
+                <div class="article_nav">
+                    <span class="return">返回目录</span>
+                    <span class="previous">上一篇&nbsp;:&nbsp;这是上一篇的标题这是上一篇的标题这是上一篇的标题这是上一篇的标题</span>
+                    <span class="tag">标签&nbsp;:&nbsp;javascript nodejs</span>
+                </div>
+                <div class="article_title">
+                    <H4>这是本文的第一个题目</H4>
+                    <span>2015.12.12 12:00:00</span>
+                </div>
+                <div class="article_s">
+                    <p>15天前，隔着1079.3公里打电话，准确来说是第n次吵架。说了什么，哭诉什么，生气什么都不记得，只记得最后一遍一遍跟你保证第二天醒来仍是一个好好的我以阻止你买第二天回杭州的票。
+                    </p>  <p> 87天前，我们领养了一只小丑猫，丑到想要放弃，小到可以钻进你的拖鞋里。我们一起讨论给它吃什么，一起带它去看病，一起带它放风。你总是揍它我总是揍你，你总是呵斥它我总是呵斥你。
+                </p>  <p> 337天以前，我们在一起一年了。我们没有做什么事来庆祝这个于我们而言特殊的日子，甚至我们都忘了那个意义非凡的时刻。还能彼此陪伴着走下去已经足够。
+                </p>  <p>738天以前，和大家一起过的七夕，头顶着漫天繁星的七夕，隔着人群隔着喧嚷，你毫不犹豫地说出我的名字，斩钉截铁地说没有理由，两句话好似流星划过砸中我的心，而那时候还不知道月老已经悄悄牵起了红线。
+                </p>  <p> 更久以前，我闯进你的世界，不经意撞过你心里那道门，我却从来不曾记得原来见过你好多次，原来和你说过话。那时候不曾料想路人甲将在我的世界里扮演着至关重要的主角，这大概就是奇妙的缘分吧。
+                </p>  <p>  过去纵然无法追溯，不可考证，可你为我编写的程序将忠实地记录携手走过的每一天每一刻。
+                </p>
+                </div>
+                <div class="article_footer">
+                    <span class="next">下一篇&nbsp;:&nbsp;这是上一篇的标题这是上一篇的标题</span>
+                </div>
+  </div>
+
+
+标签页需要的模版
+
+
+
+               <div class="active_article">
+                    <div class="article_title">
+                        <H4>这是本文的第一个题目</H4>
+                        <span>2015.12.12 12:00:00</span>
+                    </div>
+                    <div class="article_s">
+                        <p>15天前，隔着1079.3公里打电话，准确来说是第n次吵架。说了什么，哭诉什么，生气什么都不记得，只记得最后一遍一遍跟你保证第二天醒来仍是一个好好的我以阻止你买第二天回杭州的票。
+                        </p>  <p> 87天前，我们领养了一只小丑猫，丑到想要放弃，小到可以钻进你的拖鞋里。我们一起讨论给它吃什么，一起带它去看病，一起带它放风。你总是揍它我总是揍你，你总是呵斥它我总是呵斥你。
+                    </p>  <p> 337天以前，我们在一起一年了。我们没有做什么事来庆祝这个于我们而言特殊的日子，甚至我们都忘了那个意义非凡的时刻。还能彼此陪伴着走下去已经足够。
+                    </p>  <p>738天以前，和大家一起过的七夕，头顶着漫天繁星的七夕，隔着人群隔着喧嚷，你毫不犹豫地说出我的名字，斩钉截铁地说没有理由，两句话好似流星划过砸中我的心，而那时候还不知道月老已经悄悄牵起了红线。
+                    </p>  <p> 更久以前，我闯进你的世界，不经意撞过你心里那道门，我却从来不曾记得原来见过你好多次，原来和你说过话。那时候不曾料想路人甲将在我的世界里扮演着至关重要的主角，这大概就是奇妙的缘分吧。
+                    </p>  <p>  过去纵然无法追溯，不可考证，可你为我编写的程序将忠实地记录携手走过的每一天每一刻。
+                    </p>
+                    </div>
+                </div>
+
+                <div class="list">
+                    <ul>
+                        <li>
+                            <div class="s_circle"></div>
+                            <p class="this_time">2015.12.12 12:00:00</p>
+                            <p class="this_title">这里有一篇文章的标题在这里这里有一篇文章的标题在这里这里有一篇文章的标题在这里这里有一篇文章的标题在这里这里有一篇文章的标题在这里</p>
+                        </li>
+                        <li>
+                            <div class="s_circle"></div>
+                            <p class="this_time">2015.12.12 12:00:00</p>
+                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                        </li>
+                        <li>
+                            <div class="s_circle"></div>
+                            <p class="this_time">2015.12.12 12:00:00</p>
+                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                        </li>
+                        <li>
+                            <div class="s_circle"></div>
+                            <p class="this_time">2015.12.12 12:00:00</p>
+                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                        </li>
+                    </ul>
+                    <br/>
+                </div>
+
+
+
+
+
+
+                 <div class="article_list">
+                                <div class="count">
+                                    <div>目前总计有8篇文章</div>
+                                </div>
+                                <div class="list">
+                                    <div class="year">
+                                        <div class="l_circle"></div>
+                                        <p class="this_year">2016</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里这里有一篇文章的标题在这里这里有一篇文章的标题在这里这里有一篇文章的标题在这里这里有一篇文章的标题在这里<span class="tags">javascript</span><span class="tags">nodejs</span></p>
+                                        </li>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                    </ul>
+                                    <br/>
+                                    <br/>
+                                    <div class="year">
+                                        <div class="l_circle"></div>
+                                        <p class="this_year">2016</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                        <li>
+                                            <div class="s_circle"></div>
+                                            <p class="this_time">2015.12.12 12:00:00</p>
+                                            <p class="this_title">这里有一篇文章的标题在这里</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+<!-- template for the component -->
+<script type="x/template" id="header-view-template">
+    <div class="draggable-header-view"
+         @mousedown="startDrag" @touchstart="startDrag"
+         @mousemove="onDrag" @touchmove="onDrag"
+         @mouseup="stopDrag" @touchend="stopDrag" @mouseleave="stopDrag">
+        <svg class="bg" width="320" height="560">
+            <path :d="headerPath" fill="#3F51B5"></path>
+        </svg>
+        <div class="header">
+            <slot name="header"></slot>
+        </div>
+        <div class="content" :style="contentPosition">
+            <slot name="content"></slot>
+        </div>
+    </div>
+</script>
+
+<draggable-header-view>
+    <template slot="header">
+        <h1>Elastic Draggable SVG Header</h1>
+        <p>with <a href="http://vuejs.org" target="_blank">Vue.js</a> + <a href="http://dynamicsjs.com" target="_blank">dynamics.js</a></p>
+    </template>
+    <template slot="content">
+        <p>Note this is just an effect demo - there are of course many additional details if you want to use this in production, e.g. handling responsive sizes, reload threshold and content scrolling. Those are out of scope for this quick little hack. However, the idea is that you can hide them as internal details of a Vue.js component and expose a simple Web-Component-like interface.</p>
+    </template>
+</draggable-header-view>
+
+</body>
+<script src="javascripts/vue/dist/vue.min.js"></script>
+<script src="javascripts/dynamics/dynamics.min.js"></script>
+<script>
+    document.body.addEventListener('touchmove', function (e) {
+        e.preventDefault()
+    })
+
+    Vue.component('draggable-header-view', {
+        template: '#header-view-template',
+        data: function () {
+            return {
+                dragging: false,
+                // quadratic bezier control point
+                c: { x: 160, y: 160 },
+                // record drag start point
+                start: { x: 0, y: 0 }
+            }
+        },
+        computed: {
+            headerPath: function () {
+                return 'M0,0 L320,0 320,160' +
+                        'Q' + this.c.x + ',' + this.c.y +
+                        ' 0,160'
+            },
+            contentPosition: function () {
+                var dy = this.c.y - 160
+                var dampen = dy > 0 ? 2 : 4
+                return {
+                    transform: 'translate3d(0,' + dy / dampen + 'px,0)'
+                }
+            }
+        },
+        methods: {
+            startDrag: function (e) {
+                e = e.changedTouches ? e.changedTouches[0] : e
+                this.dragging = true
+                this.start.x = e.pageX
+                this.start.y = e.pageY
+            },
+            onDrag: function (e) {
+                e = e.changedTouches ? e.changedTouches[0] : e
+                if (this.dragging) {
+                    this.c.x = 160 + (e.pageX - this.start.x)
+                    // dampen vertical drag by a factor
+                    var dy = e.pageY - this.start.y
+                    var dampen = dy > 0 ? 1.5 : 4
+                    this.c.y = 160 + dy / dampen
+                }
+            },
+            stopDrag: function () {
+                if (this.dragging) {
+                    this.dragging = false
+                    dynamics.animate(this.c, {
+                        x: 160,
+                        y: 160
+                    }, {
+                        type: dynamics.spring,
+                        duration: 700,
+                        friction: 280
+                    })
+                }
+            }
+        }
+    })
+
+    new Vue({ el: 'body' })
+
+
+</script>
+
+
+h1 {
+  font-weight: 300;
+  font-size: 1.8em;
+  margin-top: 0;
+}
+a {
+  color: #fff;
+}
+.draggable-header-view {
+  background-color: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  width: 320px;
+  height: 560px;
+  overflow: hidden;
+  margin: 30px auto;
+  position: relative;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.draggable-header-view .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.draggable-header-view .header, .draggable-header-view .content {
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.draggable-header-view .header {
+  height: 160px;
+}
+.draggable-header-view .content {
+  color: #333;
+  line-height: 1.5em;
+}

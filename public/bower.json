@@ -1,0 +1,29 @@
+{
+  "name": "bower_lib",
+  "description": "bower_myblog_10000H",
+  "main": "index",
+  "keywords": [
+    "jquery",
+    "backbone",
+    "underscore"
+  ],
+  "authors": [
+    "Xiaotao.Nie"
+  ],
+  "license": "MIT",
+  "homepage": "10000H.top",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "javascripts",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "underscore": "^1.8.3",
+    "backbone": "^1.3.3",
+    "highlight": "^9.6.0"
+  }
+}

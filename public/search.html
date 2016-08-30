@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果</title>
+    <link href="less/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="top_bar"></div>
+
+<div class="myblog_index">
+    <div class="myblog_index_1">
+        <div class="index_main">
+           <div class="search_result">
+                <div class="count">
+                    <div>找到如下搜索结果&nbsp;:</div>
+                </div>
+           </div>
+        </div>
+
+        <div class="index_info">
+            <div class="info_top">
+                <div class="info_header">
+                    <p class="info_header_s"><A href="index.html">10000H.top</A></p>
+                </div>
+                <div class="language"><span>中文</span></div>
+                <ul class="info_li">
+                </ul>
+                <div class="info_me">
+                    <p class="info_me_s">要想成为大牛,10000hours,也是远远不够的。</p>
+                </div>
+            </div>
+            <div class="info_second">
+                <div class="protrait">
+                    <img class="protrait_s" src="http://placeholder.cn/110">
+                </div>
+                <div class="name">XT.N</div>
+                <div class="all_data">
+                    <ul class="info_data">
+                    </ul>
+                    <ul class="info_data_tag">
+                        <li>文章</li>
+                        <li>轻博</li>
+                        <li>浏览</li>
+                    </ul>
+                </div>
+                <ul class="other_site">
+                    <li><img src="images/7.jpg"><span>net@zju.edu.cn</span></li>
+                    <li><a href="http://blog.csdn.net/ul646691993" target="_blank"><img src="images/6.jpg"><span>csdn blog</span></a></li>
+                    <li><a href="https://github.com/aircloud" target="_blank"><img src="images/6.jpg"><span>github</span></a></li>
+                </ul>
+                <div class="rss">
+                    <p>rss</p>
+                </div>
+                <div class="search">
+                    <form>
+                        <input id="index_search" class="index_search" type="text" name="search" placeholder="在这里搜索...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <p>@2016 XT.N 版权所有,遵循<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" style="border-bottom: dashed 1px cornflowerblue">署名-相同方式共享4.0国际协议</a></p>
+</div>
+<script src="javascripts/jquery/dist/jquery.min.js"></script>
+<script src="javascripts/underscore/underscore-min.js"></script>
+<script src="javascripts/backbone/backbone-min.js"></script>
+<script type="text/template" id="listTemplate">
+    <% _.each(datas, function (item) { %>
+    <li><a href="<%= item.href %>"><img src="<%= item.url %>"><span><%= item.title %></span></a></li>
+    <% }); %>
+</script>
+<script type="text/template" id="dataTemplate">
+    <li><%= article_number %></li>
+    <li class="info_data_border"><%= s_article_number %></li>
+    <li><%= visitors %></li>
+</script>
+<script type="text/template" id="searchResultView">
+    <div class="this_result">
+            <div class="result_tag">
+                <div class="tag_circle"></div>
+                <div class="tag_name"><%= type %></div>
+            </div>
+            <ul>
+                <% _.each(data, function (item) { %>
+                <li>
+                <div class="info_name"><a href="<%= item.tourl %>"><%= item.title %></a></div>
+                <div class="info_content"><%= item.content %></div>
+                </li>
+                <% }); %>
+            </ul>
+    </div>
+</script>
+
+<script src="javascripts/index.js"></script>
+<script src="javascripts/search.js"></script>
+</body>
+</html>

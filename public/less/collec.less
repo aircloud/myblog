@@ -1,0 +1,100 @@
+@import "color";
+
+.list3{
+  width: 670px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+  //border-left: 1px solid @theme1_list_point;
+  //border-left: 4px solid @theme1_skyblue;
+  display: inline-block;
+  padding-bottom: 0;
+  height: auto;
+  //background-color: @theme1_back;
+  ul{
+    li{
+      //margin-top: 16px;
+      padding-left: 50px;
+      &:hover{
+        background: @theme1_skyblue;
+        color: white;
+        border-radius: 2px;
+        p{
+          color: white;
+          a{
+            color: white;
+          }
+        }
+      }
+      width: 640px;
+      border-bottom: 1px dotted white;
+      .s_circle{
+        position: relative;
+        left: -38px;
+        top:14px;
+        background: white;
+        border: 1px solid @theme1_list_point;
+        width: 13px;
+        height: 13px;
+        border-radius: 7px;
+        &:hover{
+          border: 1px solid @theme1_skyblue;
+          background: @theme1_skyblue;
+
+        }
+      }
+      .this_time{
+        font-size: 14px;
+      }
+      .this_title{
+        .tags{
+          background-color: @theme1_border_grey;
+          color: white;
+          border-radius: 2px;
+          padding:2px 5px 2px 5px;
+          margin-left: 5px;
+          &:hover{
+            background: @theme1_skyblue;
+            cursor: pointer;
+          }
+        }
+        padding-top: 8px;
+        padding-bottom: 12px;
+        font-size: 16px;
+        line-height: 25px;
+        &:hover{
+          color: @theme1_blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.tags{
+  margin-top: 30px;
+  margin-left: 40px;
+  width: 700px;
+  height: auto;
+  margin-bottom: 30px;
+  ul{
+    li{
+      background-color: @theme1_skyblue;
+      color: white;
+      border-radius: 6px;
+      font-size: 17px;
+      padding:6px 15px 6px 15px;
+      margin-left: 15px;
+      margin-bottom: 15px;
+      float: left;
+      &:hover{
+        background: @theme1_blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#tagNumber{
+  color: @theme1_blue;
+}

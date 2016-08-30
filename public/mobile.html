@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width,initial-scale=1.2,user-scalable=no,maximum-scale=1">
+    <link rel="apple-touch-icon" href="favicon2.ico"/>
+    <title>10000H</title>
+    <link type="text/css" rel="stylesheet" href="less/m.css">
+</head>
+<body  id="app"
+       @mousedown="startDrag" @touchstart="startDrag"
+       @mousemove="onDrag" @touchmove="onDrag"
+       @mouseup="stopDrag" @touchend="stopDrag" @mouseleave="stopDrag">
+
+<div>
+    <div class="side" id="side" @touchstart="preventDef(e)" @touchmove="preventDef(e)" @touchend="preventDef(e)">
+        <div class="mysideli">
+            <p><a  v-link="{ path: '/index' }">我的主页</a></p>
+            <p><a  v-link="{ path: '/articlelist' }">文章列表</a></p>
+            <p><a  v-link="{ path: '/collection' }">我的收藏</a></p>
+            <p><a  v-link="{ path: '/myprofile' }">我的简介</a></p>
+        </div>
+    </div>
+
+    <div class="header">
+        <img src="images/menu.png" id="tab_side" class="menu"  @click="showSideBar">
+        <div>
+            <div id="fix_menu"></div>
+            <div class="header-div">
+                <div class="header-title">
+                    <p>10000H</p>
+                </div>
+                <!-- <p><a href="#!/articlelist">文章列表</a></p> -->
+            </div>
+        </div>
+        <div id="page" >
+            <router-view></router-view>
+            <!--<page-component></page-component>-->
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/template" id="indexpage">
+    <div v-show="show1">
+        <img src="" class="banner" @click="inito">
+        <div class="content" id="mycontent" v-for="thisinfo in article">
+            <div class="content-title">
+                {{thisinfo.title}}
+            </div>
+            <div class="content-text">
+                {{{thisinfo.content}}}
+            </div>
+            <div class="button-div">
+                <button>查看更多</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="article_list">
+    <p>this is a article list</p>
+</script>
+
+<script src="javascripts/vue/dist/vue.min.js"></script>
+<script src="javascripts/dynamics/dynamics.min.js"></script>
+<script src="javascripts/vue/vue-router-dev/dist/vue-router.min.js"></script>
+<script src="javascripts/reqwest-master/reqwest.min.js"></script>
+<script src="javascripts/mobile.js"></script>
+</html>

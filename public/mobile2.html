@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=divice-width,initial-scale=1.2,user-scalable=no,maximum-scale=1">
+    <link rel="apple-touch-icon" href="favicon.ico"/>
+    <title>10000H</title>
+    <link type="text/css" rel="stylesheet" href="less/m.css">
+</head>
+<body id="app" @mousedown="startDrag" @touchstart="startDrag"
+      @mousemove="onDrag" @touchmove="onDrag"
+      @mouseup="stopDrag" @touchend="stopDrag" @mouseleave="stopDrag">
+
+<div class="side_and_mask">
+    <div class="side" id="side" @touchstart="preventDef(e)" @touchmove="preventDef(e)" @touchend="preventDef(e)">
+        <img src="images/next.png">
+        <!--<div class="dotted"></div>-->
+        <div class="mysideli">
+            <p><a  v-link="{ path: '/', exact: true }">我的主页</a></p>
+            <p><a  v-link="{ path: '/articlelist' }">文章列表</a></p>
+            <p><a  v-link="{ path: '/collec' }">我的收藏</a></p>
+            <p><a  v-link="{ path: '/myprofile' }">我的简介</a></p>
+        </div>
+    </div>
+    <div class="mask"></div>
+</div>
+
+<div class="header">
+    <img src="images/menu.png" id="tab_side" class="menu"  @click="showSideBar">
+    <div>
+        <div id="fix_menu"></div>
+        <div class="header-div">
+            <a href="#!/" class="header-title">
+                <p>10000H</p>
+            </a>
+        </div>
+    </div>
+    <div id="page" >
+        <router-view transition="fade"
+                     transition-mode="out-in"
+        ></router-view>
+        <!--<page-component></page-component>-->
+    </div>
+</div>
+</body>
+
+
+<script type="text/template" id="indexpage">
+    <div v-show="show1" @mousedown="inito"  @touchstart="inito" @mousemove="getmore" @touchmove="getmore">
+        <img src="" class="banner" transition="fade"
+             transition-mode="out-in">
+        <div class="content" id="mycontent" v-for="thisinfo in article" transition="fade"
+             transition-mode="out-in">
+            <div class="content-title">
+                <a href="#!/article?id={{thisinfo.ID}}">
+                    {{thisinfo.title}}
+                </a>
+            </div>
+            <div class="content-text">
+                {{{thisinfo.content}}}
+            </div>
+            <div class="background-tran"></div>
+            <div class="button-div">
+                <button>
+                    <a href="#!/article?id={{thisinfo.ID}}">
+                        查看详细
+                    </a>
+                </button>
+            </div>
+        </div>
+        <div class="nomore" v-show="ifnomore">
+            <p>没有更多了</p>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="article_list">
+
+    <div class="article_list_div">
+        <ul v-for="thisinfo in article">
+            <li >
+                <a href="#!/article?id={{thisinfo.ID}}">{{thisinfo.title}}</a>
+                <p> {{{thisinfo.time}}}</p>
+            </li>
+        </ul>
+    </div>
+
+</script>
+
+<script type="text/template" id="myarticle">
+    <a v-link="{ path: '/articlelist' }" class="myarticle_return">返回文章列表</a>
+    <div class="myarticle_div">
+        <div class="myarticle_title">{{article.title}}</div>
+        <div class="myarticle_content">{{{article.content}}}</div>
+    </div>
+    <a v-link="{ path: '/articlelist' }" class="myarticle_return myarticle_return_footer">返回文章列表</a>
+</script>
+
+<script type="text/template" id="mycollec">
+    <div class="article_list_div">
+        <button @click="toggle_class">{{toggle_text}}</button>
+        <div class="collec_class" v-show="if_show_class" transition="fade"
+             transition-mode="out-in">
+            <span v-for="thisinfo in allclass" @click="show_collec(thisinfo)">{{thisinfo}}</span>
+        </div>
+        <ul>
+            <li  v-for="thisinfo in collec" transition="fade"
+                 transition-mode="out-in">
+                <a href="{{thisinfo.url}}">{{thisinfo.title}}</a>
+                <p> {{{thisinfo.url}}}</p>
+            </li>
+        </ul>
+    </div>
+</script>
+<script type="text/template" id="myprofile">
+    <div class="profile">
+        <div>
+            <p>人生止步于理想,<br/>取法乎上,得乎其中,取法乎中,得之其下</p>
+            <p>e-mail:net@zju.edu.cn</p>
+        </div>
+    </div>
+</script>
+<script src="javascripts/vue/dist/vue.min.js"></script>
+<script src="javascripts/dynamics/dynamics.min.js"></script>
+<script src="javascripts/vue/vue-router-dev/dist/vue-router.min.js"></script>
+<script src="javascripts/reqwest-master/reqwest.min.js"></script>
+<script src="javascripts/mobile2.js"></script>
+</html>
