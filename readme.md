@@ -5,7 +5,9 @@
 
 ####技术架构
 
-目前采用的后端nodejs，前端backbone，css用less支持，数据库用的mysql(本来想用mongodb，但是不想把数据直接存到本服务器上...就用了自己以前有的mysql数据库)
+目前PC端采用的后端nodejs，前端backbone，css用less支持，数据库用的mysql(本来想用mongodb，但是不想把数据直接存到本服务器上...就用了自己以前有的mysql数据库)
+移动端用nodejs+vue，并且还有一个nodejs+vuex+vue-loader+webpack+vue-router的进阶版本。
+
 
 ####更新日志
 
