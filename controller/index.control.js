@@ -25,12 +25,12 @@ module.exports = {
         if(sort!=""){
             sort=sort.split(",");
             if(sort[0]=="tag")
-            myquery = "select * from myblog_short where tag like '%"+sort[1]+"%'";
+            myquery = "select * from myblog_short where tag like '%"+sort[1]+"%' order by id DESC";
             else if(sort[0]=="all")
-            myquery =  "select * from myblog_short where tag like '%"+sort[1]+"%' OR title like '%"+sort[1]+"%' OR describes like '%"+sort[1]+"%'" ;
+            myquery =  "select * from myblog_short where tag like '%"+sort[1]+"%' OR title like '%"+sort[1]+"%' OR describes like '%"+sort[1]+"%' order by id DESC" ;
         }
         else
-            myquery = "select * from myblog_short";
+            myquery = "select * from myblog_short order by id DESC";
         console.log(myquery);
         query(myquery,function(err, value, fields){
 
@@ -219,6 +219,7 @@ module.exports = {
         })
     },
     savecomment:function(req,res,next){
+        console.log("comment");
         console.log(req.body);
         var name = req.body.name;
         if(name=="")name="匿名用户";
@@ -312,7 +313,7 @@ module.exports = {
         var tag = req.body.tag;
         var title = req.body.title;
         var mytime=(new Date()).toLocaleString();
-        var myquery = "select  *  from myblog_article where timeid = '"+id+"'";
+        var myquery = "select  *  from myblog_article where title = '"+title+"' OR timeid = '"+id+"'";
         if(pass=="646691993") {
             console.log("ok0...");
             query(myquery, function (err, value, fields) {
@@ -327,6 +328,13 @@ module.exports = {
                     console.log(myquery2);
                 }
                 query(myquery2, function (err, value, fields) {
+                    if(myquery2.slice(0,1)=="i")
+                    {
+                        var myquery3="UPDATE `myblog_info` SET `article_number` = `article_number` + 1;";
+                        query(myquery3,function(err,vaulue2,fields){
+                            res.json(value);
+                        });
+                    }
                     res.json(value);
                 });
             });
@@ -341,11 +349,11 @@ module.exports = {
         content = content.replace(/'/g,'\"');
         var id = req.body.id;
         var pass = req.body.pass;
-        var describes = req.body.source_content.slice(0,60)+"......";
+        var describes = req.body.content.slice(0,80)+"......";
         var tag = req.body.tag;
         var title = req.body.title;
         var mytime=(new Date()).toLocaleString();
-        var myquery = "select  *  from myblog_short where timeid = '"+id+"'";
+        var myquery = "select  *  from myblog_short where title = '"+title+"' OR timeid = '"+id+"'";
         if(pass=="646691993") {
             console.log("ok...");
             query(myquery, function (err, value, fields) {
@@ -360,6 +368,13 @@ module.exports = {
                     console.log(myquery2);
                 }
                 query(myquery2, function (err, value, fields) {
+                    if(myquery2.slice(0,1)=="i")
+                    {
+                        var myquery3="UPDATE `myblog_info` SET `s_article_number` = `s_article_number` + 1;";
+                        query(myquery3,function(err,vaulue2,fields){
+                            res.json(value);
+                        });
+                    }
                     res.json(req.body);
                 });
             });
@@ -422,6 +437,12 @@ module.exports = {
     getallcollec:function(req,res,next){
         var myquery = "select * from myblog_collec order by ID DESC";
         query(myquery,function(err, value, fields){
+            res.json(value);
+        });
+    },
+    addvisit:function(req,res,next){
+        var myquery3="UPDATE `myblog_info` SET `visitors` = `visitors` + 1;";
+        query(myquery3,function(err,value,fields){
             res.json(value);
         });
     }

@@ -14,11 +14,11 @@ $().ready(function () {
                 email:""
             }
         },
-        url:"http://node.310058.cn/savecomment"
+        url:"/savecomment"
     });
 
     var commentcollec = Backbone.Collection.extend({
-       url:"http://node.310058.cn/getallcomment",
+       url:"/getallcomment",
 
        model:commentmodel
     });

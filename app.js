@@ -1,9 +1,11 @@
 var express = require('express');
+var compression = require('compression');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -12,6 +14,7 @@ var lessMiddleware = require('less-middleware');
 console.log(__dirname);
 
 var app = express();
+app.use(compression());
 var pubDir = path.join(__dirname, 'public');
 // app.use(lessMiddleware({
 //   dest: '/css', // 应该是在浏览器地址栏里访问地址

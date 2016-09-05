@@ -12,7 +12,10 @@ html,body,*{
   padding: 0;
   color:@theme1;
   //background: @theme1_back;
-  font-family: "Heiti SC";
+  /*font-family: "Heiti SC";*/
+  font-family: "Microsoft YaHei";
+  font-weight: 300;
+  letter-spacing:1px;
 }
 
 a,a:active,a:hover{
@@ -46,6 +49,28 @@ a,a:active,a:hover{
   }
   100%{
     transform:rotate(360deg) scale(1);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; /*初始状态 透明度为0*/
+  }
+  50% {
+    opacity: 0; /*中间状态 透明度为0*/
+  }
+  100% {
+    opacity: 1; /*结尾状态 透明度为1*/
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /*初始状态 透明度为0*/
+  }
+  50% {
+    opacity: 0; /*中间状态 透明度为0*/
+  }
+  100% {
+    opacity: 1; /*结尾状态 透明度为1*/
   }
 }
 .loading-2{

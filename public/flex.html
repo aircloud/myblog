@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        html,body,div,p{
+            margin: 0;
+            padding: 0;
+        }
+        code{
+            display: block;
+        }
+        .contain{
+            display: flex;
+            width: 100%;
+            height: auto;
+            background-color: #F3F4F8;
+            padding-bottom: 20px;
+        }
+        .main{
+            width:1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background:white;
+        }
+        p{
+            line-height: 30px;
+        }
+        .example0{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            justify-content:flex-end;
+            background-color: #D6D7D8;
+        }
+        .example0-1{
+            width: 250px;
+            height: 80px;
+            background-color: #4A90E2;
+            margin: auto;
+        }
+        .example1{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            justify-content:flex-end;
+            background-color: #D6D7D8;
+        }
+        .example1-1{
+            width: 250px;
+            height: auto;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .mycode{
+            width: 980px;
+            background-color: papayawhip;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .example2{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            justify-content:center;
+            background-color: #D6D7D8;
+        }
+        .example2-1{
+            width: 250px;
+            height: auto;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example3{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            justify-content:space-between;
+            background-color: #D6D7D8;
+        }
+        .example3-1{
+            width: 250px;
+            height: auto;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example4{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            justify-content:space-around;
+            background-color: #D6D7D8;
+        }
+        .example4-1{
+            width: 250px;
+            height: auto;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+
+        .example5{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            justify-content:space-around;
+            background-color: #D6D7D8;
+        }
+        .example5-1{
+            width: 250px;
+            height: auto;
+            background-color: orange;
+            /*margin: 10px;*/
+            display: flex;
+        }
+        .example5-1 p{
+            margin: auto;
+            font-size: 24px;
+            color: white;
+        }
+        .example5-2{
+            width: 250px;
+            height: auto;
+            background-color: #4A90E2;
+            /*margin: 10px;*/
+            flex:1;
+        }
+
+        .example6{
+            width: 500px;
+            height: 300px;
+            display: flex;
+            flex-direction:column;
+            justify-content:space-around;
+            background-color: #D6D7D8;
+        }
+        .example6-1{
+            width: 500px;
+            height: 100PX;
+            background-color: orange;
+            /*margin: 10px;*/
+        }
+        .example6-2{
+            width: 500px;
+            height: auto;
+            background-color: #4A90E2;
+            /*margin: 10px;*/
+            flex:1;
+        }
+
+        .example7{
+            width: 1000px;
+            height: 100px;
+            display: flex;
+            background-color: #D6D7D8;
+            flex-wrap: wrap;
+            overflow: scroll;
+        }
+        .example7-1{
+            width: 250px;
+            height: auto;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example8{
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            background-color: #D6D7D8;
+            flex-wrap: wrap-reverse;
+        }
+        .example8-1{
+            width: 250px;
+            height: 100px;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example9{
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            background-color: #D6D7D8;
+            flex-wrap: wrap-reverse;
+            align-content:flex-start;
+        }
+        .example9-1{
+            width: 250px;
+            height: 100px;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+
+        .example10{
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            background-color: #D6D7D8;
+            flex-wrap: wrap;
+            align-content:flex-end;
+            align-items:center;
+        }
+        .example10-1{
+            width: 250px;
+            height: 100px;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example11{
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            background-color: #D6D7D8;
+            align-items:center;
+        }
+        .example11-1{
+            width: 250px;
+            height: 100px;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example12{
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            background-color: #D6D7D8;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        .example12-1{
+            width: 250px;
+            height: 100px;
+            background-color: #4A90E2;
+            margin: 10px;
+        }
+        .example13{
+            width: 1000px;
+            height: 400px;
+            display: flex;
+            background-color: #D6D7D8;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        .example13-1{
+            width: 250px;
+            height: 100px;
+            background-color: #4A90E2;
+            margin: 10px;
+            display: flex;
+        }
+        .example13-1 p{
+            margin: auto;
+            font-size: 24px;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="contain">
+    <div class="main">
+        <p>本文通篇讲flex弹性布局盒模型,相关属性都通过例子来展开,为了方便参考,没有多余的样式文件和js文件,以及没有用预处理器,<BR/>下面会把关键CSS代码列出,如果想查看全部代码,请审查元素。</p>
+
+        <P class="mycode">水平垂直居中
+            <code>
+                display: flex;
+                并且给要居中的div写上margin:auto;
+            </code>
+        </P>
+        <div class="example0">
+            <div class="example0-1"></div>
+        </div>
+
+        <P class="mycode">基本布局主轴对齐(不写的话默认向左)
+            <code>
+                display: flex;
+                justify-content:flex-end;
+            </code>
+        </P>
+        <div class="example1">
+            <div class="example1-1"></div>
+            <div class="example1-1"></div>
+            <div class="example1-1"></div>
+        </div>
+        <P class="mycode">基本布局主轴对齐
+            <code>
+                display: flex;
+                justify-content:center;
+            </code>
+        </P>
+        <div class="example2">
+            <div class="example2-1"></div>
+            <div class="example2-1"></div>
+            <div class="example2-1"></div>
+        </div>
+        <P class="mycode">基本布局主轴对齐
+            <code>
+                display: flex;
+                justify-content:space-between;
+            </code>
+        </P>
+        <div class="example3">
+            <div class="example3-1"></div>
+            <div class="example3-1"></div>
+            <div class="example3-1"></div>
+        </div>
+        <P class="mycode">基本布局主轴对齐
+            <code>
+                display: flex;
+                justify-content:space-around;
+            </code>
+        </P>
+        <div class="example4">
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+        </div>
+        <P class="mycode">一栏固定一栏响应式
+            <code>
+                display: flex;
+                并且给需要响应变化的div样式加上flex:1;另一个给定宽度;
+                这时候justify-content被忽视。
+            </code>
+        </P>
+        <div class="example5">
+            <div class="example5-1" ><P>我是固定100PX</P></div>
+            <div class="example5-2" ></div>
+        </div>
+        <P class="mycode">两栏1:2响应式布局
+            <code>
+                display: flex;
+                并且给需要响应变化的div样式加上flex:1和flex:2;
+                这时候justify-content被忽视。
+            </code>
+        </P>
+        <div class="example5">
+            <div class="example5-1" style="flex: 1"></div>
+            <div class="example5-2" style="flex: 2"></div>
+        </div>
+        <P class="mycode">两栏固定一栏响应式
+            <code>
+                display: flex;
+                并且给需要响应变化的div样式加上flex:1;其它宽度给定;
+                这时候justify-content被忽视。
+            </code>
+        </P>
+        <div class="example5">
+            <div class="example5-1"></div>
+            <div class="example5-2"></div>
+            <div class="example5-1"></div>
+        </div>
+        <P class="mycode">垂直一栏固定另一栏占满剩下高度
+            <code>
+                display: flex;flex-direction:column;(主侧轴交换)
+                并且给需要响应变化的div样式加上flex:1;
+                这时候justify-content被忽视。
+            </code>
+        </P>
+        <div class="example6">
+            <div class="example6-1"></div>
+            <div class="example6-2"></div>
+        </div>
+        <HR/>
+        <P class="mycode">默认弹性不换行
+            <code>
+                display: flex;
+                justify-content:space-around;
+            </code>
+        </P>
+        <div class="example4">
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+            <div class="example4-1"></div>
+        </div>
+        <P class="mycode">换行(高度会被压缩)
+            <code>
+                display: flex;
+                flex-wrap: wrap;
+            </code>
+        </P>
+        <div class="example7">
+            <div class="example7-1"></div>
+            <div class="example7-1"></div>
+            <div class="example7-1"></div>
+            <div class="example7-1"></div>
+            <div class="example7-1"></div>
+        </div>
+        <P class="mycode">换行(高度会被压缩)
+            <code>
+                display: flex;
+                flex-wrap: wrap-reverse;这个时候新的会往上上面塞。
+                注意:有的孩子说了,加上一个overflow不就完了,放心,不管用的。
+            </code>
+        </P>
+        <div class="example8">
+            <div class="example8-1"></div>
+            <div class="example8-1"></div>
+            <div class="example8-1"></div>
+            <div class="example8-1"></div>
+            <div class="example8-1"></div>
+        </div>
+        <P class="mycode">换行(高度会被压缩)并对伸缩行进行限制
+            <code>
+                display: flex;
+                align-content:flex-start;
+                flex-wrap: wrap-reverse;<BR/>
+                和上面的对比,上面的伸缩行是没啥限制的,这个是把伸缩行"挤到"上面来,但是注意这里其实是一个特殊情况,因为伸缩项目自己用到了wrap-reverse,所以这个伸缩行的上面其实是眼睛看到的下面。
+            </code>
+        </P>
+        <div class="example9">
+            <div class="example9-1"></div>
+            <div class="example9-1"></div>
+            <div class="example9-1"></div>
+            <div class="example9-1"></div>
+            <div class="example9-1"></div>
+        </div>
+        <P class="mycode">换行并且进行侧轴对齐
+            <code>
+                display: flex;align-content:flex-end;
+                align-items:center;
+                注意:侧轴对齐这个属性不是这么用的,虽然它的表现效果并没有align-content优先(具体怎么用看下一个例子)
+            </code>
+        </P>
+        <div class="example10">
+            <div class="example10-1"></div>
+            <div class="example10-1"></div>
+            <div class="example10-1"></div>
+            <div class="example10-1"></div>
+            <div class="example10-1"></div>
+        </div>
+
+        <P class="mycode">不换行并且进行侧轴对齐
+            <code>
+                display: flex;
+                align-content:flex-end;
+            </code>
+        </P>
+        <div class="example11">
+            <div class="example11-1"></div>
+            <div class="example11-1"></div>
+            <div class="example11-1"></div>
+            <div class="example11-1"></div>
+            <div class="example11-1"></div>
+        </div>
+
+        <P class="mycode">多个项目水平垂直居中对齐
+            <code>
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: center;
+            </code>
+        </P>
+        <div class="example12">
+            <div class="example12-1"></div>
+            <div class="example12-1"></div>
+            <div class="example12-1"></div>
+            <div class="example12-1"></div>
+            <div class="example12-1"></div>
+        </div>
+        <P class="mycode">多个项目水平垂直居中对齐并且让一个特定的项目排到前面
+            <code>
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: center;
+                在第三个上面加上order: -1,它就跑到前面了。<BR/>
+                注意:负数的会排到正数前面,越大越后。
+            </code>
+        </P>
+        <div class="example13">
+            <div class="example13-1"><p>1</p></div>
+            <div class="example13-1"><p>2</p></div>
+            <div class="example13-1" style="order:-1"><p>3</p></div>
+            <div class="example13-1"><p>4</p></div>
+            <div class="example13-1"><p>5</p></div>
+        </div>
+        <P>以上有什么说的不对的地方,请直接邮件onlythen@yeah.net告诉我,或者去我的Github相关主页https://github.com/aircloud/flex</P>
+    </div>
+</div>
+
+</body>
+</html>

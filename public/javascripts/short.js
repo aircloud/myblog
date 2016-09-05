@@ -13,7 +13,7 @@ $().ready(function () {
                 tag:[]
             }
         },
-        url:"http://node.310058.cn/shortthis/"
+        url:"/shortthis/"
     });
 
     var shortthisview = Backbone.View.extend({
@@ -50,7 +50,7 @@ $().ready(function () {
     shortThis0=new shortthis();
 
     var shorts = Backbone.PageableCollection.extend({
-       url:"http://node.310058.cn/getshort",
+       url:"http://tempwrite.msocca.com/getshort",
 
        state:{
            pageSize:9,
@@ -90,7 +90,7 @@ $().ready(function () {
         getdetail:function(event){
             var id =event.currentTarget.attributes['title'].value;
             console.log(id);
-            shortThis0.url="http://node.310058.cn/shortthis/"+id;
+            shortThis0.url="/shortthis/"+id;
             shortThis0.fetch({success:function(){
                 shortThisView=new shortthisview({model:shortThis0});
             }});
@@ -159,14 +159,43 @@ $().ready(function () {
         }
     });
     var shortView = new shortview({collection:shortItems});
-    shortItems.getFirstPage().done(function () {
-        shortView.render();
+    
+     var router = Backbone.Router.extend({
+        routes:{
+            "short/:id":"getShortById",
+            "short":"getAllShort",
+            "":"getAllShort"
+        },
+        getAllShort:function(){
+             console.log("render...");
+                shortItems.getFirstPage().done(function () {
+                 // shortView.render();
+               });
+        },
+        getShortById:function(id){
+            if(!id){
+               
+            }
+            else{
+                 shortThis0.url="/shortthis/"+id;
+                 shortThis0.fetch({success:function(){
+                 shortThisView=new shortthisview({model:shortThis0});
+            }});
+            }    
+          
+        }
     });
+
+
+    
 
     var paginator = new Backgrid.Extension.Paginator({
         collection: shortItems
     });
     $("#paginator").append(paginator.render().$el);
+
+    var route2 = new router();
+    Backbone.history.start();
 
     $("#begin_search").bind("click",function(){
         var search_text = $("#short_search").val();
@@ -188,6 +217,8 @@ $().ready(function () {
        var thisID = $(this).val('title');
        console.log(thisID);
     });
+
+
     // $(".short_main_each").bind("mouseover",function(){console.log(this);$(this).addClass("outline");});
     //不能这样绑定因为这时候还没有这个类呢
 });

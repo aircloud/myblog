@@ -22,6 +22,12 @@ var MyComponent = Vue.extend({
             }
         }
     },
+    computed: {
+      bannerurl:function(){
+          var temp = Math.ceil(Math.random()*7);
+          return "../images/banner"+temp+".jpg";
+      }
+    },
 
     ready:function(){
         console.log("hello created");
@@ -356,3 +362,8 @@ router.map({
 });
 
 router.start(mymobile,"#app");
+
+// var temp = Math.ceil(Math.random()*7);
+// banner.style.backgroundImage="url(images/banner"+temp+".jpg)";
+// banner.style.backgroundSize="cover";
+// banner.style.border="none";

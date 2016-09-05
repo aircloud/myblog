@@ -58,7 +58,6 @@ $().ready(function () {
     });
 
     $(".protrait_s").attr("src","images/photo.jpg");
-    $("#banner1").attr("src","images/banner.jpg");
     $("#index_search").bind('keydown',function(event){
 
         if(event.keyCode==13) {
@@ -67,4 +66,26 @@ $().ready(function () {
             return false;
         }
     });
+
+    var thistime=Date.parse(new Date());
+    if(!localStorage.getItem("visited")){
+        $.get("/addvisit",function(data){});
+        localStorage.setItem("visited","1");
+        localStorage.setItem("visitedtime",thistime);
+    }
+    else{
+        if(thistime-localStorage.getItem("visitedtime")>86400000){
+            localStorage.removeItem("visitedtime");
+            $.get("/addvisit",function(data){});
+            localStorage.setItem("visitedtime",thistime);
+        }
+        else{
+            //do nothing
+        }
+    }
+
+    var temp = Math.ceil(Math.random()*7);
+    $("#banner1").attr("src","images/banner"+temp+".jpg");
+
+
 });

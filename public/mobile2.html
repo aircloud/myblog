@@ -47,7 +47,7 @@
 
 <script type="text/template" id="indexpage">
     <div v-show="show1" @mousedown="inito"  @touchstart="inito" @mousemove="getmore" @touchmove="getmore">
-        <img src="" class="banner" transition="fade"
+        <img src="" class="banner" id="banner" transition="fade"
              transition-mode="out-in">
         <div class="content" id="mycontent" v-for="thisinfo in article" transition="fade"
              transition-mode="out-in">

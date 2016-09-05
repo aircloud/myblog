@@ -43,4 +43,6 @@ router.get("/getsomearticle/:number",index_control.getsomearticle);
 router.get("/getallarticle",index_control.getallarticle);
 router.get("/getallcollec",index_control.getallcollec);
 
+router.get("/addvisit",index_control.addvisit);
+
 module.exports = router;

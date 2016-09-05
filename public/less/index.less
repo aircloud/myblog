@@ -22,7 +22,7 @@
 .top_bar{
   width: 100%;
   height: 3px;
-  position: fixed;
+  //position: fixed;
   top:0;
   background: @theme1;
 }
@@ -39,6 +39,7 @@
     background:lightgrey;
     margin-bottom: 30px;
     img{
+      animation: fadeIn 2s;
       width: 800px;
       height: 350px;
     }
@@ -46,23 +47,27 @@
   .short_title{
     width: 800px;
     height: 80px;
-    background:@theme1_short_title;
+    background-image: linear-gradient(120deg,@git_color1,@git_color2);
     padding-top: 40px;
+    color:white;
     h4{
       margin-left:20px;
       font-size:18px;
-      font-weight: 600;
+      font-weight: 500;
+          color:white;
     }
     p{
       margin-top: 5px;
       margin-left: 20px;
       font-size:15px;
+          color:white;
       line-height: 20px;
     }
   }
   .short_main{
     width: 800px;
-    height: 970px;
+    /*height: 970px;*/
+    padding-bottom: 20px;
     background:white;
     display: inline-block;
     .short_main_class{
@@ -126,28 +131,33 @@
     }
     .short_main_l{
       width: 750px;
-      height: 800px;
-      //border: 1px solid;
+      /*height: 800px;*/
+      /*border: 1px solid;*/
       margin-top: 20px;
       margin-left: 25px;
+      padding-bottom: 20px;
       .short_main_each{
         border-radius: 5px;
-        background: @theme1_back2;
-        width: 240px;
-        height:250px;
+        background: @theme1_back;
+        /*border: 1px solid @theme1_blue;*/
+        width: 750px;
+        height:140px;
         float: left;
         margin-right: 10px;
         display: inline-block;
         padding-top: 10px;
         margin-bottom: 10px;
         .each_title{
+          /*color: @theme1_skyblue;*/
           font-size: 15px;
           margin-left: 15px;
           margin-bottom: 10px;
           font-weight: 600;
+          width:715px;
           a{
+            color:@theme1_blue;
             &:hover{
-              color:@theme1_blue;
+              color:@theme1;
             }
           }
           &:hover{
@@ -156,9 +166,9 @@
         }
         .each_content{
           border-top:1px solid @theme1_border_grey;
-          width: 240px;
+          width: 740px;
           height:210px;
-          ul{
+          .tag_ul{
             li{
               float: left;
               height: 15px;
@@ -168,7 +178,8 @@
               padding-left: 8px;
               padding-right: 8px;
               font-size: 12px;
-              padding-top: 4px;
+              padding-top: 3px;
+              padding-bottom: 3px;
               background: @theme1_skyblue;
               color:white;
               border-radius: 2px;
@@ -176,8 +187,8 @@
           }
           .content_main{
             clear: left;
-            width: 210px;
-            height:145px;
+            width: 710px;
+            min-height:125px;
             font-size: 13px;
             margin-left: 15px;
             margin-top:36px;
@@ -224,7 +235,7 @@
   .active_article{
     background:white;
     margin-bottom:30px;
-
+    animation:fadeIn 1s;
     .article_title{
       height: auto;
       display: inline-block;
@@ -259,13 +270,30 @@
       color: @theme1;
       ul{
         list-style:square;
-        text-indent: 2em;
+        /*text-indent: 2em;*/
+        margin-bottom: 10px;
+      }
+      hr{
+        margin-bottom: 10px;
       }
       p{
-        text-indent: 2em;
+        strong{
+          border-left: 2px solid @theme1_blue;
+          padding-left: 5px;
+          margin-top: 5px;
+        }
+        /*text-indent: 2em;*/
         line-height: 30px;
         font-size: 15px;
         color: @theme1;
+        margin-bottom: 10px;
+      }
+      h3,h4{
+        p{
+          color:@theme1_blue;
+          font-size:20px;
+        }
+        color:@theme1_blue;
       }
     }
   }
@@ -314,6 +342,7 @@
       margin-left: 25px;
       min-height:173px;
       li{
+        animation:fadeIn 1s;
         height: 25px;
         width: 200px;
         margin-bottom: 12px;
@@ -402,7 +431,7 @@
       li{
         margin-left: 62px;
         text-align: left;
-        width: 160px;
+        width: 168px;
         margin-bottom: 15px;
         span{
           margin-left: 15px;
@@ -421,7 +450,7 @@
       margin-left: 52px;
       p{
         font-size: 18px;
-        margin-top: 8px;
+        margin-top: 4px;
         color: @theme1_orange;
       }
     }

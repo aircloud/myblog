@@ -13,8 +13,8 @@
     <div class="myblog_index_1">
         <div class="index_main">
             <div class="short_title">
-                <h4>速记轻博客</h4>
-                <p>速记轻博客用来记录自己平时看到的一些琐碎的知识，集中起来，随机展现以供review，让碎片学习变得更有价值</p>
+                <h4>前端笔记</h4>
+                <p>这里用来记录自己平时看到的一些琐碎的知识，集中起来，随机展现以供review，让碎片学习变得更有价值</p>
             </div>
             <div class="short_main">
                 <div class="short_main_class">
@@ -86,7 +86,7 @@
                     </ul>
                     <ul class="info_data_tag">
                         <li>文章</li>
-                        <li>轻博</li>
+                        <li>笔记</li>
                         <li>浏览</li>
                     </ul>
                 </div>
@@ -131,16 +131,16 @@
 </script>
 <script type="text/template" id="shortView">
     <div class="short_main_each">
-        <div class="each_title"><a href="#" class="toDetail" title="<%= ID %>"><%= title %></a></div>
+        <div class="each_title"><a href="#short/<%= ID %>"  title=""><%= ID %>-<%= title %></a></div>
         <div class="each_content">
-            <ul>
+            <ul class="tag_ul">
                 <% _.each(tag, function (mytag) { %>
                 <a href="#"><li class="tag_search"><%= mytag %></li></a>
                 <% }); %>
             </ul>
             <div class="content_main"><%= describes %>
             </div>
-            <div class="content_time"><%= time %></div>
+            <!-- <div class="content_time"><%= time %></div> -->
         </div>
     </div>
 </script>
@@ -148,10 +148,10 @@
     <div class="short_this">
         <div class="this_title">
             <h4><%= title %></h4>
-            <a id="backToList">返回</a>
+            <a href="#short">返回</a>
         </div>
         <div class="this_content">
-            <ul>
+            <ul class="tags_ul">
                 <% _.each(tag, function (mytag) { %>
                 <a href="#"><li class="tag_search"><%= mytag %></li></a>
                 <% }); %>
