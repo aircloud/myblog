@@ -5,7 +5,7 @@
 
 ####技术架构
 
-目前PC端采用的后端nodejs，前端backbone，css用less支持，数据库用的mysql(本来想用mongodb，但是不想把数据直接存到本服务器上...就用了自己以前有的mysql数据库)
+目前PC端采用的后端nodejs，前端backbone，css用less支持，数据库用的mysql(本来想用mongodb，但是不想把数据直接存到本服务器上...就用了自己以前有的mysql数据库)      
 移动端用nodejs+vue，并且还有一个nodejs+vuex+vue-loader+webpack+vue-router的进阶版本。
 
 
@@ -23,8 +23,8 @@
 * 2016.09.05
 
 进行博客速度的优化：
-1. 用nginx根目录指向public，直接处理静态文件，并且配置图片、css等缓存时间。
-2. 对网页施行gzip压缩，优化访问速度。
-3. 对部分js代码利用Google提供的开源工具进行有效的代码压缩。
-4. 尚未实现利用Etags压缩，本来想用html5的离线存储发现效果不佳，暂时不用。
+1. 用nginx根目录指向public，直接处理静态文件，并且配置图片、css等缓存时间。     
+2. 对网页施行gzip压缩，优化访问速度。    
+3. 对部分js代码利用Google提供的开源工具进行有效的代码压缩。     
+4. 尚未实现利用Etags压缩，本来想用html5的离线存储发现效果不佳，暂时不用。     
 
