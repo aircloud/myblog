@@ -414,6 +414,37 @@ module.exports = {
             res.end();
         }
     },
+    savemycollec2:function(req,res,next){
+        console.log(req.body);
+        var content = req.body.content;
+        content = content.replace(/'/g,'\"');
+        var id = req.body.id;
+        var pass = req.body.pass;
+        var tag = req.body.tag;
+        var title = req.body.title;
+        var mytime=(new Date()).toLocaleString();
+        var myquery = "select  *  from myblog_collec where timeid = '"+id+"'";
+        if(pass=="646691993") {
+            console.log("ok...");
+            query(myquery, function (err, value, fields) {
+                console.log(value);
+                var myquery2;
+                if (value[0] == null) {
+                    myquery2 = "insert into myblog_collec (`title`,`tag` ,`url` ,`timeid`) VALUES('" + title + "','" + tag + "','" + content + "','" + id + "')";
+                    console.log(myquery2);
+                } else {
+                    myquery2 = "update myblog_collec set title = '" + title + "',tag = '" + tag + "',url = '" + content + "' where timeid = '" + id + "'";
+                    console.log(myquery2);
+                }
+                query(myquery2, function (err, value, fields) {
+                    res.json(value);
+                });
+            });
+        }
+        else{
+        res.end();
+        }
+    },
     getsomearticle:function(req,res,next){
         var number =req.params.number;
         var max_number = number+3;

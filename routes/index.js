@@ -39,6 +39,11 @@ router.put("/savemyarticle",index_control.savemyarticle);
 router.put("/savemyshort",index_control.savemyshort);
 router.put("/savemycollec",index_control.savemycollec);
 
+
+router.post("/savemycollec",index_control.savemycollec2);
+
+//
+
 router.get("/getsomearticle/:number",index_control.getsomearticle);
 router.get("/getallarticle",index_control.getallarticle);
 router.get("/getallcollec",index_control.getallcollec);

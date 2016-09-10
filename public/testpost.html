@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function handler(){
+        //do nothing now
+    }
+//    var urlarea = document.getElementById("url");
+    var timestamp = (new Date()).valueOf();
+    var mydata = {
+        id:timestamp,
+        pass:"14444",
+        title:"24444",
+        tag:"34444",
+        content:"544444"
+    };
+    var XHR = new XMLHttpRequest();
+    XHR.open("POST", "http://localhost:8090/savemycollec",true);
+    XHR.setRequestHeader('content-type', 'application/json');
+    XHR.onreadystatechange = handler;
+    XHR.send(JSON.stringify(mydata));
+    //    chrome.tabs.getCurrent(function(tab) {
+    //        // alert(tab);
+    //        // console.log(tab);
+    //        urlarea.innerHTML=tab.url;
+    //    });
+
+</script>
+</body>
+</html>
