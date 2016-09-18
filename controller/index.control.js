@@ -8,6 +8,7 @@ var app = require("../app");
 module.exports = {
 
     getdata: function (req, res, next) {
+        res.header("Cache-Control","max-age=1000");
         query("select * from myblog_info ", function (err, vals, fields) {
             //其他信息
             console.log(vals);
@@ -25,9 +26,9 @@ module.exports = {
         if(sort!=""){
             sort=sort.split(",");
             if(sort[0]=="tag")
-            myquery = "select * from myblog_short where tag like '%"+sort[1]+"%' order by id DESC";
+                myquery = "select * from myblog_short where tag like '%"+sort[1]+"%' order by id DESC";
             else if(sort[0]=="all")
-            myquery =  "select * from myblog_short where tag like '%"+sort[1]+"%' OR title like '%"+sort[1]+"%' OR describes like '%"+sort[1]+"%' order by id DESC" ;
+                myquery =  "select * from myblog_short where tag like '%"+sort[1]+"%' OR title like '%"+sort[1]+"%' OR describes like '%"+sort[1]+"%' order by id DESC" ;
         }
         else
             myquery = "select * from myblog_short order by id DESC";
@@ -107,28 +108,28 @@ module.exports = {
         return_value.data=[];
         return_value.year=[];
         query(myquery, function (err, value, fields) {
-                if(value[0]!=null&&value.length) {
-                    return_value.number=value.length;
-                    for (var i = 0; i < value.length; i++) {
-                        value[i].tag=value[i].tag.split(",");
-                        if(return_value.year.indexOf(value[i]['year'])===-1){
-                            console.log('new');
-                            var this_item={};
-                            this_item.year=value[i]['year'];
-                            this_item.article=[];
-                            this_item.article.push(value[i]);
-                            return_value.data.push(this_item);
-                            return_value.year.push(value[i]['year']);
-                        }
-                        else{
-                            var dex = return_value.year.indexOf(value[i]['year']);
-                            return_value.data[dex].article.push(value[i]);
-                        }
+            if(value[0]!=null&&value.length) {
+                return_value.number=value.length;
+                for (var i = 0; i < value.length; i++) {
+                    value[i].tag=value[i].tag.split(",");
+                    if(return_value.year.indexOf(value[i]['year'])===-1){
+                        console.log('new');
+                        var this_item={};
+                        this_item.year=value[i]['year'];
+                        this_item.article=[];
+                        this_item.article.push(value[i]);
+                        return_value.data.push(this_item);
+                        return_value.year.push(value[i]['year']);
+                    }
+                    else{
+                        var dex = return_value.year.indexOf(value[i]['year']);
+                        return_value.data[dex].article.push(value[i]);
                     }
                 }
-                console.log(return_value);
-                res.json(return_value);
-            })
+            }
+            console.log(return_value);
+            res.json(return_value);
+        })
     },
 
     getactivearticle:function(req,res,next){
@@ -173,6 +174,7 @@ module.exports = {
         });
     },
     getindexarticle:function(req,res,next){
+        res.header("Cache-Control","max-age=1000");
         var myquery = "select * from myblog_article order by ID DESC";
         var number = req.params.id;
         query(myquery,function(err,value,fields){
@@ -442,7 +444,7 @@ module.exports = {
             });
         }
         else{
-        res.end();
+            res.end();
         }
     },
     getsomearticle:function(req,res,next){
@@ -472,6 +474,7 @@ module.exports = {
         });
     },
     addvisit:function(req,res,next){
+        res.header("Cache-Control","max-age=100");
         var myquery3="UPDATE `myblog_info` SET `visitors` = `visitors` + 1;";
         query(myquery3,function(err,value,fields){
             res.json(value);
