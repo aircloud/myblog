@@ -7,7 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('myblog:server');
 var http = require('http');
-
+var fs = require('fs');
+// console.log("dir",__dirname);
+// var options={
+//   key:fs.readFileSync("/etc/nginx/conf.d/ssl/ssl_ca.key"),
+//   cert:fs.readFileSync("/etc/nginx/conf.d/ssl/1_www.10000h.top_bundle.crt"),
+//   passphrase:"646691993"
+// };
 /**
  * Get port from environment and store in Express.
  */

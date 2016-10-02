@@ -50,7 +50,7 @@ $().ready(function () {
     shortThis0=new shortthis();
 
     var shorts = Backbone.PageableCollection.extend({
-       url:"http://tempwrite.msocca.com/getshort",
+       url:"https://www.10000h.top/getshort",
 
        state:{
            pageSize:9,
