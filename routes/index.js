@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var index_control  = require("../controller/index.control");
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -42,12 +44,13 @@ router.put("/savemycollec",index_control.savemycollec);
 
 router.post("/savemycollec",index_control.savemycollec2);
 
-//
 
 router.get("/getsomearticle/:number",index_control.getsomearticle);
 router.get("/getallarticle",index_control.getallarticle);
 router.get("/getallcollec",index_control.getallcollec);
 
 router.get("/addvisit",index_control.addvisit);
+
+router.post("/file_upload",multipartMiddleware,index_control.file_upload_handle);
 
 module.exports = router;

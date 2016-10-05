@@ -50,7 +50,7 @@
 
 5.上传好后，需要把你的key变一下（公钥)，代码样例：
 
-```openssl req -newkey rsa:2048 -keyout 10000h.key -out 10000h.csr```
+```openssl req -newkey rsa:2048 -keyout 10000h.key -out 10000h.crt```
 
 6.之后即可以配置https服务器了，直接配置nginx的配置文件，这里值得注意的是**原来的nodejs不用任何改动，直接配置nginx就行**，自己一开始不知道，以为也要把nodejs改成https，导致踩了很多坑。
 

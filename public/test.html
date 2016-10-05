@@ -24,7 +24,12 @@
 <div id="a">
     <div id="b"></div>
 </div>
-
+<form method="post" enctype="multipart/form-data" action="https://www.10000h.top/file_upload">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="file" name="image">
+    <input type="submit">
+</form>
 <script src="javascripts/jquery/dist/jquery.min.js"></script>
 <script>
     $(function(){
@@ -34,7 +39,7 @@
             $(document).bind('mousemove',event,movey);
             $(document).mouseup(function(){
                 $(document).unbind("mousemove");
-            })
+            });
             //定义鼠标移动时执行的函数
             function movey(){
                 var y1=event.offsetY;

@@ -3,6 +3,7 @@
  */
 var query=require("./mysql_pool");
 var app = require("../app");
+var fs = require('fs');
 
 
 module.exports = {
@@ -478,6 +479,25 @@ module.exports = {
         var myquery3="UPDATE `myblog_info` SET `visitors` = `visitors` + 1;";
         query(myquery3,function(err,value,fields){
             res.json(value);
+        });
+    },
+    file_upload_handle:function(req, res,next) {
+        console.log("req.files",req.files);
+        console.log("req.body",req.body);
+        console.log(__dirname);
+        // res.json(req);
+        // 获得文件的临时路径
+        var tmp_path = req.files.image.path;
+        // 指定文件上传后的目录 - 示例为"images"目录。
+        var target_path = '../public/images/upload/' + req.files.image.name;
+        // 移动文件
+        fs.rename(tmp_path, target_path, function(err) {
+            if (err) throw err;
+            // 删除临时文件夹文件,
+            fs.unlink(tmp_path, function() {
+                if (err) throw err;
+                res.status(200).send("ok");
+            });
         });
     }
 };
