@@ -64,4 +64,6 @@ ssl_certificate_key   /etc/nginx/conf.d/ssl2/ssl_ca2.key;
 
 ssl_session_timeout 5m;
 ```
+* 2016.11.13
 
+调整了文章模块的多处样式，现在看着舒服了很多。
