@@ -22,6 +22,8 @@ function is_mobile() {
         return true
     }
 }
+console.log("is_mobile()",is_mobile());
+
 if(is_mobile()&&(window.location.pathname.indexOf("index.html")>0)){
     location.assign("mobile2.html");
 }
