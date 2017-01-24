@@ -24,10 +24,10 @@ function is_mobile() {
 }
 console.log("is_mobile()",is_mobile());
 
-if(is_mobile()&&(window.location.pathname.indexOf("index.html")>0)){
+if(is_mobile()&&(location.pathname.indexOf("mobile2.html")<0)){
     location.assign("mobile2.html");
 }
-else if(!is_mobile()&&(window.location.pathname.indexOf("mobile2.html")>0)){
+else if(!is_mobile()&&(location.pathname.indexOf("mobile2.html")>0)){
     location.assign("index.html");
 }
 
