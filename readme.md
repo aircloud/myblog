@@ -1,4 +1,5 @@
-目前自己正在学习服务端渲染，预计把博客的文章部分用服务端渲染的方式重构一遍,届时会开新的repo(虽然我知道这些写了也只有自己看)
+新的博客 ： http://aircloud.10000h.top
+原来的博客 (<A href="https://www.10000h.top">https://www.10000h.top</A>)仍然使用
 
 ---
 
@@ -17,6 +18,8 @@
 
 目前PC端采用的后端nodejs，前端backbone，css用less支持，数据库用的mysql(本来想用mongodb，但是不想把数据直接存到本服务器上...就用了自己以前有的mysql数据库)      
 移动端用nodejs+vue，并且还有一个nodejs+vuex+vue-loader+webpack+vue-router的进阶版本。
+
+新的博客采用react服务端渲染
 
 
 ####更新日志
@@ -83,3 +86,7 @@ ssl_session_timeout 5m;
 3. 给端口开放防火墙。
 4. forever启动nodejs。
 5. service重新启动nginx。
+
+* 2017.02.*
+
+完成了新的博客，采用react服务端渲染

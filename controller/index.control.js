@@ -481,6 +481,13 @@ module.exports = {
             res.json(value);
         });
     },
+    addArticleVisit:function(req,res,next){
+        res.header("Cache-Control","max-age=100");
+        var myquery3="UPDATE `myblog_article` SET `visitors` = `visitors` + 1 where ID = '" +req.params.id+"';";
+        query(myquery3,function(err,value,fields){
+            res.json(value);
+        });
+    },
     file_upload_handle:function(req, res,next) {
         console.log("req.files",req.files);
         console.log("req.body",req.body);

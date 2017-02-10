@@ -15,6 +15,7 @@ router.get('/short',function(req,res,next){
 });
 
 router.get("/shortthis/:id",index_control.getshortContent);
+router.get("/addarticlevisit/:id",index_control.addArticleVisit);
 
 router.get("/getshort",index_control.getshort);
 
