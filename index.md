@@ -1,6 +1,6 @@
 ### 个人简介
 
-* 计算机专业(主修)、工业设计专业(双修)。
+* 计算机专业(主修)、工业设计专业(双修)，2018年毕业。
 * 1995年出生，北方人，将来希望留在杭州/上海。
 * JSer,进取的web开发者
 
@@ -8,7 +8,7 @@
 * 博客一：https://www.10000h.top
 * 博客二：http://blog.csdn.net/ul646691993
 * 博客三：http://aircloud.10000h.top
-* 知乎专栏(联合创始人，作者之一)： https://zhuanlan.zhihu.com/zjujs
+* 知乎专栏(联合创始人，管理员，作者之一)： https://zhuanlan.zhihu.com/zjujs
 
 ### 核心技能
 
