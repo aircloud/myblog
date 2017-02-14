@@ -1,4 +1,4 @@
->Specially for frontEnd developer intern 2017 of Netease Games
+>Specially for frontEnd developer intern 2017
 
 ### 个人简介
 
