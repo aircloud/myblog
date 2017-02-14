@@ -50,6 +50,8 @@
 基于 react-native 的色彩搭配 app，致力于根据一 张图片生成出一套符合色彩设计美学的配色(https:// github.com/aircloud/myNatureColor)
 * backbone源码指南
 自行阅读backbone源代码并编写11000字的源代码解析(https://github.com/aircloud/backboneAnalyze)
+* 聚课盒子早期开发者，主程，第二届杭州黑客马拉松大赛作品(第五名，三等奖)
+http://gkrbox.com/
 
 ### 校园经历
 * Google俱乐部主席
