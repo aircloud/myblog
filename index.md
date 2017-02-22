@@ -1,4 +1,4 @@
->Specially for frontEnd developer intern 2017
+>Specially for frontEnd developer 
 
 ### 个人简介
 
@@ -28,6 +28,7 @@
 
 ### 荣誉奖励
 * 学业一等奖学金,优秀学生一等奖学金
+* 唐仲英奖学金
 * 2016腾讯硬件创新创业大赛全国十强
 * 挑战杯浙江省创业大赛金奖
 * 好安基金创业计划一等奖,数万元奖励
