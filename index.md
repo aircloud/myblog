@@ -18,6 +18,7 @@
 * 致力于javascript[主要包含:javascrpt原生编程、Backbone、Vue、React、React Native等框架的运用、服务端nodejs编程、web安全等],熟练掌握html5、css3。
 	* 曾参与或主导多个网站、app开发，阅读过优秀框架源代码，参与贡献GitHub开源项目。
 * 了解并使用过java、c++、c#、python、php等。
+	* 积极参加学校专业课程学习和科研项目训练。	
 	* 曾获杭州黑客马拉松三等奖(php作为开发语言)
 * 精通photoshop、熟练掌握illustrator、Indesign、After Effect、Lightroom等设计制作工具以及catia等三维设计工具。
 	* 曾入围红点设计大奖、作为设计师参加的创业项目(炬象光电)曾获挑战杯浙江省创业大赛金奖。
