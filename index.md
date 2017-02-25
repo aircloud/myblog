@@ -7,9 +7,9 @@
 * JSer,进取的web开发者
 
 ### 个人博客
-* 博客一：https://www.10000h.top
+* 博客一：https://www.10000h.top [自行开发，主要采用backbone、nodejs]
 * 博客二：http://blog.csdn.net/ul646691993
-* 博客三：http://aircloud.10000h.top
+* 博客三：http://aircloud.10000h.top [自行开发，react服务端渲染]
 * 知乎专栏(联合创始人，管理员，作者之一)： https://zhuanlan.zhihu.com/zjujs
 * segmentFault专栏(所写文章曾被segmentFault专栏首页、公众号头条推荐):https://segmentfault.com/blog/xiaotao
 
