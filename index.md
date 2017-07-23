@@ -3,13 +3,13 @@
 ### 个人简介
 
 * 浙江大学本科，计算机专业(主修)、工业设计专业(双修)，2018年毕业。
-* 1995年出生，将来希望留在杭州/上海。
+* 1995年出生，将来希望留在杭州/上海/深圳。
 * JSer,进取的web开发者
 
 ### 个人博客
-* 博客一：https://www.10000h.top
+* 博客一：https://www.10000h.top [自行开发，主要采用backbone、nodejs]
 * 博客二：http://blog.csdn.net/ul646691993
-* 博客三：http://aircloud.10000h.top
+* 博客三：http://aircloud.10000h.top [自行开发，react服务端渲染]
 * 知乎专栏(联合创始人，管理员，作者之一)： https://zhuanlan.zhihu.com/zjujs
 * segmentFault专栏(所写文章曾被segmentFault专栏首页、公众号头条推荐):https://segmentfault.com/blog/xiaotao
 
@@ -18,6 +18,7 @@
 * 致力于javascript[主要包含:javascrpt原生编程、Backbone、Vue、React、React Native等框架的运用、服务端nodejs编程、web安全等],熟练掌握html5、css3。
 	* 曾参与或主导多个网站、app开发，阅读过优秀框架源代码，参与贡献GitHub开源项目。
 * 了解并使用过java、c++、c#、python、php等。
+	* 积极参加学校专业课程学习和科研项目训练。	
 	* 曾获杭州黑客马拉松三等奖(php作为开发语言)
 * 精通photoshop、熟练掌握illustrator、Indesign、After Effect、Lightroom等设计制作工具以及catia等三维设计工具。
 	* 曾入围红点设计大奖、作为设计师参加的创业项目(炬象光电)曾获挑战杯浙江省创业大赛金奖。
@@ -29,7 +30,7 @@
 ### 荣誉奖励
 * 学业一等奖学金,优秀学生一等奖学金
 * 唐仲英奖学金
-* 2016腾讯硬件创新创业大赛全国十强
+* 2016腾讯硬件创新创业大赛决赛入围，全国十五强
 * 挑战杯浙江省创业大赛金奖
 * 好安基金创业计划一等奖,数万元奖励
 
@@ -62,4 +63,6 @@ http://gkrbox.com/
 
 ### 实习经历
 * 杭州传送门科技(微链)，测试开发
-* 香飘飘，互联网事业部，新媒体
+* 香飘飘，互联网事业部，新媒体    
+   * 负责活动页面设计开发，小游戏开发等
+### 实习经历
