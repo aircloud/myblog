@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .image-slider { position:relative; display: inline-block;
+        }
+        .image-slider > div {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; width: 2%;
+            max-width: 100%;
+            overflow: hidden;
+            resize: horizontal;
+        }
+        .image-slider > div::before {
+            content: '';
+            position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; padding: 0px;
+            background:
+                    linear-gradient(-45deg, white 50%, transparent 0); background-clip: content-box;
+            cursor: ew-resize;
+        }
+        .image-slider img {
+            display: block;
+            user-select: none;
+        }
+        img{
+            width: 800px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="image-slider">
+    <div>
+    <img src="18082.jpg" alt="Before" />
+    </div>
+    <img src="18092.jpg" alt="After" />
+</div>
+
+</body>
+</html>

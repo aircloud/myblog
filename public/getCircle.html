@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AirCloud-根据三个点坐标获取圆心坐标</title>
+</head>
+<body>
+
+<label for="x1">x1</label><input type="text" id="x1"/>
+<label for="y1">y1</label><input type="text" id="y1"/>
+<label for="z1">z1</label><input type="text" id="z1"/><br/>
+<label for="x2">x2</label><input type="text" id="x2"/>
+<label for="y2">y2</label><input type="text" id="y2"/>
+<label for="z2">z2</label><input type="text" id="z2"/><br/>
+<label for="x3">x3</label><input type="text" id="x3"/>
+<label for="y3">y3</label><input type="text" id="y3"/>
+<label for="z3">z3</label><input type="text" id="z3"/><br/>
+
+<button id="getR">获取结果</button>
+
+<div id="result">注意：输出的三个坐标按顺序为先x,y,z</div>
+</body>
+
+<script>
+
+    function gid(id) {
+        return document.getElementById(id);
+    }
+
+    document.querySelector("#getR").addEventListener("click",function(){
+
+        var input = [{x:gid("x1").value,y:gid("y1").value,z:gid("z1").value},
+            {x:gid("x2").value,y:gid("y2").value,z:gid("z2").value},
+            {x:gid("x3").value,y:gid("y3").value,z:gid("z3").value}];
+
+        gid("result").innerHTML = solveCenterPointOfCircle(input);
+    });
+
+    function solveCenterPointOfCircle(pd)
+    {
+        var a1, b1, c1, d1;
+        var a2, b2, c2, d2;
+        var a3, b3, c3, d3;
+        var centerpoint = [];
+
+        var x1 = pd[0].x, y1 = pd[0].y, z1 = pd[0].z;
+        var x2 = pd[1].x, y2 = pd[1].y, z2 = pd[1].z;
+        var x3 = pd[2].x, y3 = pd[2].y, z3 = pd[2].z;
+
+        a1 = (y1*z2 - y2*z1 - y1*z3 + y3*z1 + y2*z3 - y3*z2);
+        b1 = -(x1*z2 - x2*z1 - x1*z3 + x3*z1 + x2*z3 - x3*z2);
+        c1 = (x1*y2 - x2*y1 - x1*y3 + x3*y1 + x2*y3 - x3*y2);
+        d1 = -(x1*y2*z3 - x1*y3*z2 - x2*y1*z3 + x2*y3*z1 + x3*y1*z2 - x3*y2*z1);
+
+        a2 = 2 * (x2 - x1);
+        b2 = 2 * (y2 - y1);
+        c2 = 2 * (z2 - z1);
+        d2 = x1 * x1 + y1 * y1 + z1 * z1 - x2 * x2 - y2 * y2 - z2 * z2;
+
+        a3 = 2 * (x3 - x1);
+        b3 = 2 * (y3 - y1);
+        c3 = 2 * (z3 - z1);
+        d3 = x1 * x1 + y1 * y1 + z1 * z1 - x3 * x3 - y3 * y3 - z3 * z3;
+
+        centerpoint[0] = -(b1*c2*d3 - b1*c3*d2 - b2*c1*d3 + b2*c3*d1 + b3*c1*d2 - b3*c2*d1)
+                /(a1*b2*c3 - a1*b3*c2 - a2*b1*c3 + a2*b3*c1 + a3*b1*c2 - a3*b2*c1);
+        centerpoint[1] =  (a1*c2*d3 - a1*c3*d2 - a2*c1*d3 + a2*c3*d1 + a3*c1*d2 - a3*c2*d1)
+                /(a1*b2*c3 - a1*b3*c2 - a2*b1*c3 + a2*b3*c1 + a3*b1*c2 - a3*b2*c1);
+        centerpoint[2] = -(a1*b2*d3 - a1*b3*d2 - a2*b1*d3 + a2*b3*d1 + a3*b1*d2 - a3*b2*d1)
+                /(a1*b2*c3 - a1*b3*c2 - a2*b1*c3 + a2*b3*c1 + a3*b1*c2 - a3*b2*c1);
+
+        return centerpoint;
+    }
+
+</script>
+</html>

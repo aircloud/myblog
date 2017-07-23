@@ -154,7 +154,16 @@ a,input,button{ outline:none; }
       text-indent: 2em;
     }
   }
+  p{
+    img{
+    max-width: 80%;
+    }
+  }
+  img{
+    max-width: 80%;
+  }
 }
+
 
 .background-tran{
   width: 100%;
@@ -208,7 +217,11 @@ a,input,button{ outline:none; }
     color: @theme1_lighter;
     line-height: 28px;
     background: #e6e7e8;
+    display: flex;
+          flex-wrap: wrap;
     span{
+      width: max-content;
+      width: -webkit-max-content;
       margin: 5px;
       border-bottom: dashed 1px @theme1_lighter;
     }
@@ -283,6 +296,14 @@ a,input,button{ outline:none; }
   }
 }
 
+
+.mobile-collec-li{
+  a,p{
+    max-width: 90%;
+    word-wrap: break-word;
+    word-break:break-all;
+  }
+}
 
 /**************动画*********************/
 .fade-transition {
